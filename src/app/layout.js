@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "NSW Central West Muslim Association (NSWCWMA)",
-  description: "Public Benevolent Institute",
+  title: "3D Test",
+  description: "3D Test",
 };
 
 export default function RootLayout({ children }) {
