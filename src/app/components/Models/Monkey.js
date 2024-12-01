@@ -4,13 +4,13 @@ import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
+  useGLTF,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
-import { useGLTF } from "@react-three/drei";
 
 export default function Monkey() {
-  const { nodes } = useGLTF("/monkey.glb");
+  const gltf = useGLTF("/monkey.glb");
 
   return (
     <Canvas
@@ -28,13 +28,7 @@ export default function Monkey() {
       <OrbitControls />
       <ContactShadows />
 
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Suzanne.geometry}
-        material={nodes.Suzanne.material}
-        position={[0, 0, 0]}
-      />
+      <primitive object={gltf.scene} position={[0, 0, 0]} />
     </Canvas>
   );
 }
